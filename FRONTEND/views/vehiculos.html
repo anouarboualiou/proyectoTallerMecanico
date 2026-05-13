@@ -1,0 +1,110 @@
+<div class="container mt-5">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1>Gestión de Vehículos</h1>
+
+            <p class="text-muted">
+                Administra los vehículos del taller
+            </p>
+        </div>
+
+        <button class="btn btn-primary rounded-3" onclick="navegarHacia('vehiculos/nuevo')">
+
+            <i class="bi bi-plus-lg me-2"></i>
+            Nuevo Vehículo
+
+        </button>
+
+    </div>
+
+    <!-- FILTROS -->
+    <div class="row mb-4 g-3">
+
+        <!-- BUSCADOR -->
+        <div class="col-md-8">
+
+            <div class="input-group">
+
+                <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input
+                    type="text"
+                    id="buscarVehiculo"
+                    class="form-control"
+                    placeholder="Buscar por marca, modelo o matrícula..."
+                >
+
+            </div>
+
+        </div>
+
+        <!-- FILTRO -->
+        <div class="col-md-4">
+
+            <select id="filtroCombustible" class="form-select">
+
+                <option value="">Todos los combustibles</option>
+
+                <option value="Gasolina">
+                    Gasolina
+                </option>
+
+                <option value="Diesel">
+                    Diesel
+                </option>
+
+                <option value="Híbrido">
+                    Híbrido
+                </option>
+
+                <option value="Eléctrico">
+                    Eléctrico
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- TABLA -->
+    <div class="card shadow-sm border-0 rounded-4">
+
+        <div class="card-body">
+
+            <table class="table align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Vehículo</th>
+                        <th>Matrícula</th>
+                        <th>Motor</th>
+                        <th>Combustible</th>
+                        <th>Cliente</th>
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="listaVehiculos">
+
+                    <!-- JS -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

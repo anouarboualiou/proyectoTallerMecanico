@@ -1,0 +1,238 @@
+<div class="container mt-5">
+
+    <div class="mb-5">
+
+        <h1>Incidencias Vehículos</h1>
+
+        <p class="text-muted">
+            Gestiona diagnósticos e incidencias del taller
+        </p>
+
+    </div>
+
+    <div class="row g-3 mb-5">
+
+        <div class="col-md-6">
+
+            <label class="form-label fw-semibold">
+                Filtrar por prioridad
+            </label>
+
+            <select id="filtroPrioridad" class="form-select">
+
+                <option value="">
+                    Todas las prioridades
+                </option>
+
+                <option value="Alta">
+                    Alta
+                </option>
+
+                <option value="Media">
+                    Media
+                </option>
+
+                <option value="Baja">
+                    Baja
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <label class="form-label fw-semibold">
+                Filtrar por estado
+            </label>
+
+            <select id="filtroEstado" class="form-select">
+
+                <option value="">
+                    Todos los estados
+                </option>
+
+                <option value="Abierto">
+                    Abierto
+                </option>
+
+                <option value="En Proceso">
+                    En Proceso
+                </option>
+
+                <option value="Cerrado">
+                    Cerrado
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row g-4" id="contenedorLogs">
+
+    </div>
+
+</div>
+
+<div
+    class="modal fade"
+    id="modalEditarLog"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Editar incidencia
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="formEditarLog">
+
+                    <input
+                        type="hidden"
+                        id="editLogId"
+                    >
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-semibold">
+                            Descripción
+                        </label>
+
+                        <textarea
+                            id="editDescripcion"
+                            class="form-control"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Prioridad
+                            </label>
+
+                            <select
+                                id="editPrioridad"
+                                class="form-select"
+                            >
+
+                                <option value="Alta">
+                                    Alta
+                                </option>
+
+                                <option value="Media">
+                                    Media
+                                </option>
+
+                                <option value="Baja">
+                                    Baja
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-semibold">
+                                Estado
+                            </label>
+
+                            <select
+                                id="editEstado"
+                                class="form-select"
+                            >
+
+                                <option value="Abierto">
+                                    Abierto
+                                </option>
+
+                                <option value="En Proceso">
+                                    En Proceso
+                                </option>
+
+                                <option value="Cerrado">
+                                    Cerrado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h6 class="mb-3">
+                        Metadatos técnicos
+                    </h6>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Técnico asignado
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editTecnico"
+                            class="form-control"
+                            placeholder="Ej: Anouar"
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Observaciones
+                        </label>
+
+                        <textarea
+                            id="editObservaciones"
+                            class="form-control"
+                            rows="3"
+                            placeholder="Detalles técnicos..."
+                        ></textarea>
+
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+
+                        <i class="bi bi-save me-2"></i>
+
+                        Guardar cambios
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

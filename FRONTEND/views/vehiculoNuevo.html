@@ -1,0 +1,157 @@
+<div class="container mt-5">
+
+    <div class="mb-4">
+
+        <h1>Nuevo Vehículo</h1>
+
+        <p class="text-muted">
+            Añade un nuevo vehículo al taller
+        </p>
+
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+
+        <div class="card-body p-4">
+
+            <form id="formVehiculo">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Marca
+                        </label>
+
+                        <input
+                            type="text"
+                            id="veh_marca"
+                            class="form-control"
+                        >
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Modelo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="veh_modelo"
+                            class="form-control"
+                        >
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Matrícula
+                        </label>
+
+                        <input
+                            type="text"
+                            id="veh_matricula"
+                            class="form-control"
+                        >
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Motor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="veh_motor"
+                            class="form-control"
+                        >
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Combustible
+                        </label>
+
+                        <select
+                            id="veh_combustible"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                Selecciona combustible
+                            </option>
+
+                            <option value="Gasolina">
+                                Gasolina
+                            </option>
+
+                            <option value="Diesel">
+                                Diesel
+                            </option>
+
+                            <option value="Híbrido">
+                                Híbrido
+                            </option>
+
+                            <option value="Eléctrico">
+                                Eléctrico
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Cliente
+                        </label>
+
+                        <select id="cli_id" class="form-select">
+
+                            <option value="">
+                                Selecciona un cliente
+                            </option>
+
+                        </select>
+                    
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+
+                    <button class="btn btn-primary">
+
+                        <i class="bi bi-check-lg me-2"></i>
+                        Guardar Vehículo
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        onclick="navegarHacia('vehiculos')"
+                    >
+
+                        Cancelar
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

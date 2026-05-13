@@ -1,0 +1,459 @@
+{
+  "diagramType": 2,
+  "data": {
+    "nodes": [
+      {
+        "id": "88161d0d-a297-4da3-9dfb-bd3bacac1c0c",
+        "type": "Table",
+        "position": {
+          "x": -14,
+          "y": 132
+        },
+        "data": {
+          "label": "CLIENTES",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "9b12a9a9-92ac-4c4a-ab73-e125710df909",
+              "name": "cli_nombre",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "250"
+            },
+            {
+              "id": "2b0726a0-f399-48a1-811f-ef2125b5e5de",
+              "name": "cli_fecha_nac",
+              "type": "DATE",
+              "isPrimaryKey": false
+            },
+            {
+              "id": "87a4e85f-e315-4617-8abd-91b495ebbd34",
+              "name": "cli_telefono",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "9"
+            },
+            {
+              "id": "677e952d-f6d5-4b1e-b600-8af8b54dcf2f",
+              "name": "cli_id",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 126
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c",
+        "type": "Table",
+        "position": {
+          "x": -15,
+          "y": 435
+        },
+        "data": {
+          "label": "VEHICULOS",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "9402fa25-583a-40b3-baa0-b4439294f680",
+              "name": "veh_marca",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "250",
+              "isUnique": false
+            },
+            {
+              "id": "395861f1-03b7-4af2-8768-53032485c29c",
+              "name": "veh_modelo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "250",
+              "isUnique": false
+            },
+            {
+              "id": "c9128dbd-d4cf-4c7c-ab17-4ff9a25f23af",
+              "name": "veh_imagen",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "2000",
+              "isUnique": false
+            },
+            {
+              "id": "b88b7d85-a62d-4646-9d21-fa979bb3e4c6",
+              "name": "veh_matricula",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "7",
+              "isUnique": true
+            },
+            {
+              "id": "f005e747-3265-49e9-9cb2-722c9a04d533",
+              "name": "veh_motor",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "250",
+              "isUnique": false
+            },
+            {
+              "id": "2d119dab-15f8-44ef-969d-b2cbdf8c7ad0",
+              "name": "veh_id",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "90e32496-bc57-4300-8b10-edc970e7d79a",
+              "name": "fk_CLIENTES",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "ee3b94f7-94d8-4fad-a493-40c3ead9695c",
+                "sourceTableId": "88161d0d-a297-4da3-9dfb-bd3bacac1c0c",
+                "columns": [
+                  {
+                    "id": "fk_677e952d-f6d5-4b1e-b600-8af8b54dcf2f",
+                    "name": "cli_id",
+                    "type": "INT"
+                  }
+                ]
+              },
+              "isOptional": false,
+              "isUnique": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 202
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "ca5a6458-7108-4d0d-a72a-43e33581d33d",
+        "type": "Table",
+        "position": {
+          "x": 492,
+          "y": 465
+        },
+        "data": {
+          "label": "REPARACIONES",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "9069e3d2-5df3-4513-8f57-4090bb292cb8",
+              "name": "rep_id",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "f4de569b-baf3-443c-b663-f50d0789c39d",
+              "name": "rep_fecha",
+              "type": "DATE",
+              "isPrimaryKey": false
+            },
+            {
+              "id": "a5862902-cf5e-4070-8b78-30ddba311e4f",
+              "name": "rep_tipo",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "250"
+            },
+            {
+              "id": "ac58a133-1ac0-45b6-b48f-cc469948f642",
+              "name": "rep_duracion",
+              "type": "INT",
+              "isPrimaryKey": false
+            },
+            {
+              "id": "93c5ed44-6657-4de9-b8c6-5f9a5acdba56",
+              "name": "rep_garantia",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "200"
+            },
+            {
+              "id": "4cc214ac-d76b-403d-a9f8-959598e2ac4c",
+              "name": "rep_precio",
+              "type": "INT",
+              "isPrimaryKey": false
+            },
+            {
+              "id": "3a2fa4f8-1439-4cf6-a6ac-8fa8f25f90f1",
+              "name": "fk_VEHICULOS",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "d3bd79ff-0e1d-412b-86ad-f0e96f1d1c40",
+                "sourceTableId": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c",
+                "columns": [
+                  {
+                    "id": "fk_2d119dab-15f8-44ef-969d-b2cbdf8c7ad0",
+                    "name": "veh_id",
+                    "type": "INT"
+                  }
+                ]
+              },
+              "isOptional": false
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 202
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "07ba005e-eca4-4566-8e74-8ee80473b68c",
+        "type": "Table",
+        "position": {
+          "x": 1204,
+          "y": 245
+        },
+        "data": {
+          "label": "PIEZAS",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "3e2b651c-7280-4e56-ab85-6ac2a039a157",
+              "name": "piez_nombre",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "isUnique": false,
+              "size": "250"
+            },
+            {
+              "id": "a3fc8de5-660a-4a02-9a8c-1e339d95274e",
+              "name": "piez_precio",
+              "type": "INT",
+              "isPrimaryKey": false,
+              "isUnique": false
+            },
+            {
+              "id": "9b701491-2553-483a-8674-08ec25269e4b",
+              "name": "piez_id",
+              "type": "INT",
+              "isPrimaryKey": true,
+              "isOptional": false,
+              "isUnique": false
+            },
+            {
+              "id": "ae5110a0-ee9c-4bef-b9ab-c10230a78df6",
+              "name": "piez_descripcion",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "300",
+              "isUnique": false
+            },
+            {
+              "id": "366b8a40-85ae-4017-88b0-88fb76f8883d",
+              "name": "piez_referencia_cod",
+              "type": "VARCHAR(n)",
+              "isPrimaryKey": false,
+              "size": "50",
+              "isUnique": true
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 151
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "8e2d67fd-3173-4b07-8f30-e36259e749d3",
+        "type": "Table",
+        "position": {
+          "x": 863,
+          "y": 483
+        },
+        "data": {
+          "label": "REPARACION_PIEZA",
+          "isConnectable": false,
+          "columns": [
+            {
+              "id": "77f42a1b-ac07-4cd2-afa6-d8bbf11ff721",
+              "name": "fk_REPARACIONES",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "37c7a202-a286-4f9e-b168-59b69a6dd8ee",
+                "sourceTableId": "ca5a6458-7108-4d0d-a72a-43e33581d33d",
+                "columns": [
+                  {
+                    "id": "fk_9069e3d2-5df3-4513-8f57-4090bb292cb8",
+                    "name": "rep_id",
+                    "type": "INT"
+                  }
+                ]
+              },
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "6bf8ba30-208b-4efa-86fa-707777698857",
+              "name": "fk_PIEZAS",
+              "type": "None",
+              "isForeignKey": true,
+              "foreignKeyProps": {
+                "foreignKeyGroupId": "ac034e25-7abd-4a56-918a-b7d607c29197",
+                "sourceTableId": "07ba005e-eca4-4566-8e74-8ee80473b68c",
+                "columns": [
+                  {
+                    "id": "fk_9b701491-2553-483a-8674-08ec25269e4b",
+                    "name": "piez_id",
+                    "type": "INT"
+                  }
+                ]
+              },
+              "isPrimaryKey": true,
+              "isOptional": false
+            },
+            {
+              "id": "90cfa0a8-0ea9-44ac-b63a-69a6e55946e8",
+              "name": "cantidad",
+              "type": "INT",
+              "position": 0
+            }
+          ],
+          "numberOfGroups": 0,
+          "isSelected": false
+        },
+        "measured": {
+          "width": 240,
+          "height": 102
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "88161d0d-a297-4da3-9dfb-bd3bacac1c0c->1f426535-7679-4c0a-a6f2-8ffdc4bffc7c_ee3b94f7-94d8-4fad-a493-40c3ead9695c",
+        "type": "Relational",
+        "source": "88161d0d-a297-4da3-9dfb-bd3bacac1c0c",
+        "targetHandle": "foreign-key-handle-ee3b94f7-94d8-4fad-a493-40c3ead9695c",
+        "target": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "ee3b94f7-94d8-4fad-a493-40c3ead9695c",
+            "sourceTableId": "88161d0d-a297-4da3-9dfb-bd3bacac1c0c",
+            "columns": [
+              {
+                "id": "fk_677e952d-f6d5-4b1e-b600-8af8b54dcf2f",
+                "name": "cli_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c->ca5a6458-7108-4d0d-a72a-43e33581d33d_d3bd79ff-0e1d-412b-86ad-f0e96f1d1c40",
+        "type": "Relational",
+        "source": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c",
+        "targetHandle": "foreign-key-handle-d3bd79ff-0e1d-412b-86ad-f0e96f1d1c40",
+        "target": "ca5a6458-7108-4d0d-a72a-43e33581d33d",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "d3bd79ff-0e1d-412b-86ad-f0e96f1d1c40",
+            "sourceTableId": "1f426535-7679-4c0a-a6f2-8ffdc4bffc7c",
+            "columns": [
+              {
+                "id": "fk_2d119dab-15f8-44ef-969d-b2cbdf8c7ad0",
+                "name": "veh_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "ca5a6458-7108-4d0d-a72a-43e33581d33d->8e2d67fd-3173-4b07-8f30-e36259e749d3_37c7a202-a286-4f9e-b168-59b69a6dd8ee",
+        "type": "Relational",
+        "source": "ca5a6458-7108-4d0d-a72a-43e33581d33d",
+        "targetHandle": "foreign-key-handle-37c7a202-a286-4f9e-b168-59b69a6dd8ee",
+        "target": "8e2d67fd-3173-4b07-8f30-e36259e749d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "37c7a202-a286-4f9e-b168-59b69a6dd8ee",
+            "sourceTableId": "ca5a6458-7108-4d0d-a72a-43e33581d33d",
+            "columns": [
+              {
+                "id": "fk_9069e3d2-5df3-4513-8f57-4090bb292cb8",
+                "name": "rep_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "07ba005e-eca4-4566-8e74-8ee80473b68c->8e2d67fd-3173-4b07-8f30-e36259e749d3_ac034e25-7abd-4a56-918a-b7d607c29197",
+        "type": "Relational",
+        "source": "07ba005e-eca4-4566-8e74-8ee80473b68c",
+        "targetHandle": "foreign-key-handle-ac034e25-7abd-4a56-918a-b7d607c29197",
+        "target": "8e2d67fd-3173-4b07-8f30-e36259e749d3",
+        "markerStart": {
+          "type": "arrow"
+        },
+        "data": {
+          "foreignKeyProps": {
+            "foreignKeyGroupId": "ac034e25-7abd-4a56-918a-b7d607c29197",
+            "sourceTableId": "07ba005e-eca4-4566-8e74-8ee80473b68c",
+            "columns": [
+              {
+                "id": "fk_9b701491-2553-483a-8674-08ec25269e4b",
+                "name": "piez_id",
+                "type": "INT"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "viewport": {
+      "x": 200.70360115472477,
+      "y": -108.24756805020763,
+      "zoom": 0.8705505632961241
+    }
+  },
+  "name": "ProyectoDWEC-Relational Schema",
+  "folder": {
+    "name": "Diagrams",
+    "folderType": 1,
+    "depth": 0,
+    "id": 246526
+  },
+  "id": 397183,
+  "updatedAtTimestamp": 1775646216
+}

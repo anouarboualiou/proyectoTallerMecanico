@@ -1,0 +1,108 @@
+<div class="container mt-5">
+
+    <div class="mb-4">
+        <h1>Gestión de Clientes</h1>
+        <p class="text-muted">Administra los clientes del taller</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- FORM -->
+        <div class="col-md-4">
+
+            <div class="card shadow-sm border-0 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="mb-4">Nuevo Cliente</h3>
+
+                    <form id="formCliente">
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="nombre" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Apellidos</label>
+                            <input type="text" id="apellidos" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Fecha Nacimiento</label>
+                            <input type="date" id="fecha" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="text" id="email" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="text" id="telefono" class="form-control">
+                        </div>
+
+                        <button class="btn btn-primary w-100">
+                            Crear Cliente
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- LISTADO -->
+        <div class="col-md-8">
+
+            <div class="input-group">
+
+                <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <input
+                    type="text"
+                    id="buscarCliente"
+                    class="form-control"
+                    placeholder="Buscar cliente..."
+                >
+
+            </div>
+
+            <div class="card shadow-sm border-0 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="mb-4">Listado Clientes</h3>
+
+                    <table class="table align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Fecha de Nacimiento</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaClientes">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

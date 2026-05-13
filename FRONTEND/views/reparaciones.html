@@ -1,0 +1,112 @@
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h1>Gestión de Reparaciones</h1>
+
+            <p class="text-muted mb-0">
+                Administra las reparaciones del taller
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary rounded-3"
+            onclick="navegarHacia('vehiculos')"
+        >
+
+            <i class="bi bi-plus-lg me-2"></i>
+
+            Nueva Reparación
+
+        </button>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-xl-10">
+
+            <div class="card shadow-sm border-0 rounded-4">
+
+                <div class="card-body">
+
+                    <h3 class="mb-4">
+                        Listado Reparaciones
+                    </h3>
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Vehículo</th>
+                                    <th>Tipo</th>
+                                    <th>Fecha</th>
+                                    <th>Duración</th>
+                                    <th>Garantía</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tablaReparaciones">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal fade"
+    id="modalDetalleReparacion"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Detalle reparación
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div id="contenidoDetalleReparacion">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
