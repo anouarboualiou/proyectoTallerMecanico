@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/taller_mecanico')
+mongoose.connect(process.env.MONGO_URI)
 
     .then(() => {
 
@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/taller_mecanico')
     })
     .catch((error) => {
 
-        e.error('Error al conectar MongoDB', error)
+        console.error('Error al conectar MongoDB', error)
     })
 
 
