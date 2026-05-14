@@ -12,6 +12,7 @@ const piezRepRoutes = require('./routes/piez_reparRoutes')
 const mongo = require('./config/mongo')
 const cors = require('cors')
 const path = require('path')
+const PORT = process.env.PORT || 3000
 
 const app = express()
 
@@ -45,6 +46,8 @@ app.get(/^(?!\/api).*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../FRONTEND/index.html'))
 })
 
-app.listen(3000, () => {
-    console.log('Servidor en puerto 3000')
+app.listen(PORT, () => {
+    console.log(`Servidor en puerto ${PORT}`)
 })
+
+module.exports = app
