@@ -3,7 +3,7 @@ async function cargarDetalleVehiculo(id) {
     try {
 
         const res = await fetch(
-            `http://localhost:3000/api/vehiculos/${id}`
+            `/api/vehiculos/${id}`
         )
 
         const vehiculo = await res.json()
@@ -122,7 +122,7 @@ async function cargarDetalleVehiculo(id) {
 
         const reparacionesRes =
             await fetch(
-                `http://localhost:3000/api/reparaciones`
+                `/api/reparaciones`
             )
 
         const reparaciones =

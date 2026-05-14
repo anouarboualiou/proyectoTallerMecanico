@@ -1,6 +1,6 @@
 async function cargarEditarCliente(id) {
 
-    const res = await fetch(`http://localhost:3000/api/clientes/${id}`)
+    const res = await fetch(`/api/clientes/${id}`)
     const cliente = await res.json()
 
     document.getElementById('editNombre').value = cliente.cli_nombre
@@ -24,7 +24,7 @@ async function cargarEditarCliente(id) {
             cli_telefono: document.getElementById('editTelefono').value
         }
 
-        await fetch(`http://localhost:3000/api/clientes/${id}`, {
+        await fetch(`/api/clientes/${id}`, {
 
             method: 'PUT',
             headers: {

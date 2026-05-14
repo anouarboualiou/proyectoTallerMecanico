@@ -24,7 +24,7 @@ async function iniciarFormularioLog(vehiculoId) {
         try {
 
             const res = await fetch(
-                'http://localhost:3000/api/logs',
+                '/api/logs',
                 {
                     method: 'POST',
 

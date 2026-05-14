@@ -13,13 +13,13 @@ async function cargarDashboard() {
     const ultimosVehiculosList = document.getElementById("ultimosVehiculos")
     const ultimosLogsList = document.getElementById("ultimosLogs")
 
-    const resClientes = await fetch('http://localhost:3000/api/clientes')
+    const resClientes = await fetch('/api/clientes')
     const clientes = await resClientes.json()
 
-    const resVehiculos = await fetch('http://localhost:3000/api/vehiculos')
+    const resVehiculos = await fetch('/api/vehiculos')
     const vehiculos = await resVehiculos.json()
 
-    const resLogs = await fetch('http://localhost:3000/api/logs')
+    const resLogs = await fetch('/api/logs')
     const logs = await resLogs.json()
 
     //Asignamos los numeros de las estadisticas

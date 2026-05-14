@@ -24,7 +24,7 @@ async function iniciarFormularioReparacion(vehiculoId) {
     async function cargarPiezas() {
 
         const res = await fetch(
-            'http://localhost:3000/api/piezas'
+            '/api/piezas'
         )
 
         const piezas = await res.json()
@@ -226,7 +226,7 @@ async function iniciarFormularioReparacion(vehiculoId) {
             // =========================
 
             const res = await fetch(
-                'http://localhost:3000/api/reparaciones',
+                '/api/reparaciones',
                 {
                     method: 'POST',
 
@@ -253,7 +253,7 @@ async function iniciarFormularioReparacion(vehiculoId) {
             for(const pieza of piezasReparacion) {
 
                 await fetch(
-                    'http://localhost:3000/api/reparaciones/piezas',
+                    '/api/reparaciones/piezas',
                     {
                         method: 'POST',
 

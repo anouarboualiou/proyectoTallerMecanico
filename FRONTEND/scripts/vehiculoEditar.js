@@ -3,7 +3,7 @@ async function cargarEditarVehiculo(id) {
     await cargarClientesSelect()
 
     const res = await fetch(
-        `http://localhost:3000/api/vehiculos/${id}`
+        `/api/vehiculos/${id}`
     )
 
     const vehiculo = await res.json()
@@ -37,7 +37,7 @@ async function cargarEditarVehiculo(id) {
         }
 
         await fetch(
-            `http://localhost:3000/api/vehiculos/${id}`,
+            `/api/vehiculos/${id}`,
             {
 
                 method: 'PUT',

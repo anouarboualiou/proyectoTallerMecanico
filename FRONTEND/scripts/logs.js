@@ -14,7 +14,7 @@ async function cargarLogs() {
         try {
 
             const res = await fetch(
-                'http://localhost:3000/api/logs'
+                '/api/logs'
             )
 
             const logs = await res.json()
@@ -313,7 +313,7 @@ async function cargarLogs() {
             try {
 
                 const res = await fetch(
-                    `http://localhost:3000/api/logs/${id}`,
+                    `/api/logs/${id}`,
                     {
                         method: 'PUT',
 
@@ -367,7 +367,7 @@ async function cerrarLog(id) {
     try {
 
         const res = await fetch(
-            `http://localhost:3000/api/logs/${id}`,
+            `/api/logs/${id}`,
             {
                 method: 'PUT',
 

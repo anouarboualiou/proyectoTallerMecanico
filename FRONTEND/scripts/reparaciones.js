@@ -6,7 +6,7 @@ async function cargarReparaciones() {
     async function obtenerReparaciones() {
 
         const res = await fetch(
-            'http://localhost:3000/api/reparaciones'
+            '/api/reparaciones'
         )
 
         const reparaciones = await res.json()
@@ -80,7 +80,7 @@ async function eliminarReparacion(id, tr) {
     try {
 
         const res = await fetch(
-            `http://localhost:3000/api/reparaciones/${id}`,
+            `/api/reparaciones/${id}`,
             {
                 method: 'DELETE'
             }
@@ -106,7 +106,7 @@ async function eliminarReparacion(id, tr) {
 async function mostrarDetalleReparacion(id) {
 
     const res = await fetch(
-        `http://localhost:3000/api/reparaciones/${id}/detalle`
+        `/api/reparaciones/${id}/detalle`
     )
 
     const detalle = await res.json()

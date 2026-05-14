@@ -9,7 +9,7 @@ async function cargarClientes() {
 
         try {
 
-            const res = await fetch('http://localhost:3000/api/clientes')
+            const res = await fetch('/api/clientes')
             const data = await res.json()
 
             clientesGuardados = data
@@ -37,7 +37,7 @@ async function cargarClientes() {
 
         }
 
-        await fetch('http://localhost:3000/api/clientes', {
+        await fetch('/api/clientes', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -106,7 +106,7 @@ function pintarClientes(clientes) {
                 return
             }
 
-            await fetch(`http://localhost:3000/api/clientes/${cliente.cli_id}`, {
+            await fetch(`/api/clientes/${cliente.cli_id}`, {
                 method: 'DELETE'
             })
 

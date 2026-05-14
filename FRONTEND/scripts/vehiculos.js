@@ -25,7 +25,7 @@ async function obtenerVehiculos(){
 
     try {
 
-        const res = await fetch('http://localhost:3000/api/vehiculos')
+        const res = await fetch('/api/vehiculos')
         const data = await res.json()
 
         vehiculosGuardados = data
@@ -262,7 +262,7 @@ function iniciarFormularioVehiculo() {
             cli_id: Number(document.getElementById('cli_id').value)
         }
 
-        await fetch('http://localhost:3000/api/vehiculos', {
+        await fetch('/api/vehiculos', {
 
             method: 'POST',
 
@@ -284,7 +284,7 @@ async function cargarClientesSelect() {
     try {
 
         const res = await fetch(
-            'http://localhost:3000/api/clientes'
+            '/api/clientes'
         )
 
         const clientes = await res.json()
@@ -320,7 +320,7 @@ async function eliminarVehiculo(id) {
     try {
 
         await fetch(
-            `http://localhost:3000/api/vehiculos/${id}`,
+            `/api/vehiculos/${id}`,
             {
                 method: 'DELETE'
             }
