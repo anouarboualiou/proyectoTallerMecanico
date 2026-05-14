@@ -34,7 +34,7 @@ async function addLog(req, res) {
     catch(error) {
         res.status(500).json({
             error: 'Error al crear log',
-            detalle: error
+            detalle: error.message
         })
     }
 }
@@ -51,7 +51,7 @@ async function getLogs(req, res) {
     catch(error){
         res.status(500).json({
             error:'No se ha podido obtener los logs',
-            detalle: error
+            detalle: error.message
         })
     }
     
