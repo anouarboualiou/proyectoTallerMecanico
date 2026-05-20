@@ -276,6 +276,9 @@ async function cargarLogs() {
 
             e.preventDefault()
 
+            // VALIDACIÓN
+            if (!formularioValido(formEditarLog)) return
+
             const id =
                 document.getElementById('editLogId').value
 

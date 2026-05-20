@@ -14,76 +14,90 @@
 
         <div class="card-body p-4">
 
-            <form id="formEditarVehiculo">
+            <form id="formEditarVehiculo" class="needs-validation" novalidate>
 
                 <div class="row g-3">
 
+                    <!-- Marca -->
+
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="veh_marca" class="form-label fw-semibold">
                             Marca
                         </label>
 
-                        <input
-                            type="text"
-                            id="veh_marca"
-                            class="form-control"
-                        >
+                        <input type="text" id="veh_marca" class="form-control" placeholder="Ej: BMW" required
+                            minlength="2">
+
+                        <div class="invalid-feedback">
+                            Introduce una marca válida
+                        </div>
 
                     </div>
 
+                    <!-- Modelo -->
+
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="veh_modelo" class="form-label fw-semibold">
                             Modelo
                         </label>
 
-                        <input
-                            type="text"
-                            id="veh_modelo"
-                            class="form-control"
-                        >
+                        <input type="text" id="veh_modelo" class="form-control" placeholder="Ej: Serie 3" required
+                            minlength="2">
+
+                        <div class="invalid-feedback">
+                            Introduce un modelo válido
+                        </div>
 
                     </div>
 
+                    <!-- Matrícula -->
+
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="veh_matricula" class="form-label fw-semibold">
                             Matrícula
                         </label>
 
-                        <input
-                            type="text"
-                            id="veh_matricula"
-                            class="form-control"
-                        >
+                        <input type="text" id="veh_matricula" class="form-control text-uppercase"
+                            placeholder="Ej: 1234ABC" required pattern="[0-9]{4}[A-Z]{3}">
+
+                        <div class="invalid-feedback">
+                            Introduce una matrícula válida (1234ABC)
+                        </div>
 
                     </div>
 
+                    <!-- Motor -->
+
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="veh_motor" class="form-label fw-semibold">
                             Motor
                         </label>
 
-                        <input
-                            type="text"
-                            id="veh_motor"
-                            class="form-control"
-                        >
+                        <input type="text" id="veh_motor" class="form-control" placeholder="Ej: 2.0 TDI" required>
+
+                        <div class="invalid-feedback">
+                            Introduce el tipo de motor
+                        </div>
 
                     </div>
 
+                    <!-- Combustible -->
+
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="veh_combustible" class="form-label fw-semibold">
                             Combustible
                         </label>
 
-                        <select
-                            id="veh_combustible"
-                            class="form-select"
-                        >
+                        <select id="veh_combustible" class="form-select" required>
+
+                            <option value="">
+                                Seleccionar combustible
+                            </option>
 
                             <option value="Gasolina">
                                 Gasolina
@@ -103,40 +117,50 @@
 
                         </select>
 
+                        <div class="invalid-feedback">
+                            Selecciona un tipo de combustible
+                        </div>
+
                     </div>
+
+                    <!-- Cliente -->
 
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="cli_id" class="form-label fw-semibold">
                             Cliente
                         </label>
 
-                        <select
-                            id="cli_id"
-                            class="form-select"
-                        >
+                        <select id="cli_id" class="form-select" required>
+
+                            <option value="">
+                                Seleccionar cliente
+                            </option>
 
                         </select>
+
+                        <div class="invalid-feedback">
+                            Selecciona un cliente
+                        </div>
 
                     </div>
 
                 </div>
 
+                <!-- BOTONES -->
+
                 <div class="mt-4 d-flex gap-2">
 
-                    <button class="btn btn-warning">
+                    <button type="submit" class="btn btn-warning px-4">
 
                         <i class="bi bi-check-lg me-2"></i>
                         Actualizar Vehículo
 
                     </button>
 
-                    <button
-                        type="button"
-                        class="btn btn-outline-secondary"
-                        onclick="navegarHacia('vehiculos')"
-                    >
+                    <button type="button" class="btn btn-outline-secondary" onclick="navegarHacia('vehiculos')">
 
+                        <i class="bi bi-x-circle me-2"></i>
                         Cancelar
 
                     </button>

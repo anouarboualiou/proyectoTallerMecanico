@@ -21,6 +21,9 @@ async function cargarEditarVehiculo(id) {
 
         e.preventDefault()
 
+        // VALIDACIÓN
+        if (!formularioValido(form)) return
+
         const vehiculoActualizado = {
 
             veh_marca: document.getElementById('veh_marca').value,

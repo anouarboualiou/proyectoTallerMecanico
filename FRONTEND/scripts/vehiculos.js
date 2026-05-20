@@ -247,6 +247,9 @@ function iniciarFormularioVehiculo() {
 
         e.preventDefault()
 
+        // VALIDACIÓN
+        if (!formularioValido(formVehiculo)) return
+
         const vehiculo = {
 
             veh_marca: document.getElementById('veh_marca').value,

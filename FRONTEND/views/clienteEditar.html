@@ -1,41 +1,149 @@
 <div class="container mt-5">
 
-    <h1 class="mb-4">Editar Cliente</h1>
+    <div class="mb-4">
+        <h1>Editar Cliente</h1>
+        <p class="text-muted">
+            Modifica la información del cliente
+        </p>
+    </div>
 
     <div class="card shadow-sm border-0 rounded-4">
 
-        <div class="card-body">
+        <div class="card-body p-4">
 
-            <form id="formEditarCliente">
+            <form
+                id="formEditarCliente"
+                class="needs-validation"
+                novalidate
+            >
 
-                <div class="mb-3">
-                    <label>Nombre</label>
-                    <input type="text" id="editNombre" class="form-control">
+                <div class="row g-3">
+
+                    <!-- Nombre -->
+                    <div class="col-md-6">
+
+                        <label for="editNombre" class="form-label">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editNombre"
+                            class="form-control"
+                            required
+                            minlength="2"
+                        >
+
+                        <div class="invalid-feedback">
+                            Introduce un nombre válido
+                        </div>
+
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="col-md-6">
+
+                        <label for="editApellidos" class="form-label">
+                            Apellidos
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editApellidos"
+                            class="form-control"
+                            required
+                            minlength="2"
+                        >
+
+                        <div class="invalid-feedback">
+                            Introduce los apellidos
+                        </div>
+
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="col-md-6">
+
+                        <label for="editFecha" class="form-label">
+                            Fecha de Nacimiento
+                        </label>
+
+                        <input
+                            type="date"
+                            id="editFecha"
+                            class="form-control"
+                            required
+                        >
+
+                        <div class="invalid-feedback">
+                            Selecciona una fecha válida
+                        </div>
+
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+
+                        <label for="editEmail" class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            class="form-control"
+                            required
+                        >
+
+                        <div class="invalid-feedback">
+                            Introduce un email válido
+                        </div>
+
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="col-md-12">
+
+                        <label for="editTelefono" class="form-label">
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="editTelefono"
+                            class="form-control"
+                            required
+                            pattern="[0-9]{9}"
+                        >
+
+                        <div class="invalid-feedback">
+                            Introduce un teléfono válido de 9 dígitos
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="mb-3">
-                    <label>Apellidos</label>
-                    <input type="text" id="editApellidos" class="form-control">
-                </div>
+                <div class="d-flex gap-2 mt-4">
 
-                <div class="mb-3">
-                    <label>Fecha de Nacimiento</label>
-                    <input type="date" id="editFecha" class="form-control">
-                </div>
+                    <button
+                        type="submit"
+                        class="btn btn-primary px-4"
+                    >
+                        <i class="bi bi-check-circle me-2"></i>
+                        Guardar Cambios
+                    </button>
 
-                <div class="mb-3">
-                    <label>Email</label>
-                    <input type="text" id="editEmail" class="form-control">
-                </div>
+                    <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        onclick="history.back()"
+                    >
+                        <i class="bi bi-arrow-left me-2"></i>
+                        Volver
+                    </button>
 
-                <div class="mb-3">
-                    <label>Teléfono</label>
-                    <input type="text" id="editTelefono" class="form-control">
                 </div>
-
-                <button class="btn btn-primary">
-                    Guardar Cambios
-                </button>
 
             </form>
 

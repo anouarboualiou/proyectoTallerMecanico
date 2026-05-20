@@ -15,6 +15,9 @@ async function cargarEditarCliente(id) {
 
         e.preventDefault()
 
+        // VALIDACIÓN
+        if (!formularioValido(form)) return
+
         const clienteActualizado = {
 
             cli_nombre: document.getElementById('editNombre').value,

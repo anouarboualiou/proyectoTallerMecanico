@@ -185,6 +185,9 @@ async function iniciarFormularioReparacion(vehiculoId) {
 
         e.preventDefault()
 
+        // VALIDACIÓN
+        if (!formularioValido(form)) return
+
          // =========================
         // CALCULO TOTAL
         // =========================

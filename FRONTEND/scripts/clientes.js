@@ -27,6 +27,9 @@ async function cargarClientes() {
 
         e.preventDefault()
 
+        if (!formularioValido(formCliente)) return
+
+
         const cliente = {
 
             cli_nombre: document.getElementById('nombre').value,
@@ -46,6 +49,8 @@ async function cargarClientes() {
         })
 
         formCliente.reset()
+
+        formCliente.classList.remove('was-validated')
 
         obtenerClientes()
     })

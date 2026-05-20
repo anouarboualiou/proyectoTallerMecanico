@@ -7,6 +7,9 @@ async function iniciarFormularioLog(vehiculoId) {
 
         e.preventDefault()
 
+        // VALIDACIÓN
+        if (!formularioValido(form)) return
+
         const log = {
 
             vehiculo_id: Number(vehiculoId),

@@ -18,36 +18,40 @@
 
                 <div class="card-body p-4">
 
-                    <form id="formLog">
+                    <form id="formLog" class="needs-validation" novalidate>
 
+                        <!-- DESCRIPCIÓN -->
                         <div class="mb-4">
 
-                            <label class="form-label fw-semibold">
+                            <label for="descripcion" class="form-label fw-semibold">
                                 Descripción
                             </label>
 
-                            <textarea
-                                id="descripcion"
-                                class="form-control"
-                                rows="5"
-                                placeholder="Ej: Ruido extraño en el motor al acelerar..."
-                                required
-                            ></textarea>
+                            <textarea id="descripcion" class="form-control" rows="5"
+                                placeholder="Ej: Ruido extraño en el motor al acelerar..." required
+                                minlength="10"></textarea>
+
+                            <div class="invalid-feedback">
+                                Introduce una descripción válida (mínimo 10 caracteres)
+                            </div>
 
                         </div>
 
+                        <!-- PRIORIDAD + ESTADO -->
                         <div class="row g-3">
 
+                            <!-- PRIORIDAD -->
                             <div class="col-md-6">
 
-                                <label class="form-label fw-semibold">
+                                <label for="prioridad" class="form-label fw-semibold">
                                     Prioridad
                                 </label>
 
-                                <select
-                                    id="prioridad"
-                                    class="form-select"
-                                >
+                                <select id="prioridad" class="form-select" required>
+
+                                    <option value="">
+                                        Selecciona prioridad
+                                    </option>
 
                                     <option value="Alta">
                                         Alta
@@ -63,18 +67,24 @@
 
                                 </select>
 
+                                <div class="invalid-feedback">
+                                    Selecciona una prioridad
+                                </div>
+
                             </div>
 
+                            <!-- ESTADO -->
                             <div class="col-md-6">
 
-                                <label class="form-label fw-semibold">
+                                <label for="estado" class="form-label fw-semibold">
                                     Estado
                                 </label>
 
-                                <select
-                                    id="estado"
-                                    class="form-select"
-                                >
+                                <select id="estado" class="form-select" required>
+
+                                    <option value="">
+                                        Selecciona estado
+                                    </option>
 
                                     <option value="Abierto">
                                         Abierto
@@ -90,13 +100,18 @@
 
                                 </select>
 
+                                <div class="invalid-feedback">
+                                    Selecciona un estado
+                                </div>
+
                             </div>
 
                         </div>
 
+                        <!-- BOTONES -->
                         <div class="mt-4 d-flex gap-2">
 
-                            <button class="btn btn-dark">
+                            <button type="submit" class="btn btn-dark px-4">
 
                                 <i class="bi bi-journal-plus me-2"></i>
 
@@ -104,11 +119,8 @@
 
                             </button>
 
-                            <button
-                                type="button"
-                                class="btn btn-outline-secondary"
-                                onclick="navegarHacia('vehiculos')"
-                            >
+                            <button type="button" class="btn btn-outline-secondary" onclick="navegarHacia('vehiculos')">
+                                <i class="bi bi-x-circle me-2"></i>
                                 Cancelar
                             </button>
 

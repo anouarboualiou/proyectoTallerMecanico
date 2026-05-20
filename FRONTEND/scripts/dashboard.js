@@ -38,6 +38,22 @@ async function cargarDashboard() {
     const ultimosVehiculos = vehiculos.slice(-5)
 
     ultimosVehiculos.forEach(vehiculo => {
+
+         let colorBadge = 'bg-secondary'
+
+        if(vehiculo.veh_combustible === 'Diesel') {
+            colorBadge = 'bg-dark'
+        }
+        else if(vehiculo.veh_combustible === 'Gasolina') {
+            colorBadge = 'bg-danger'
+        }
+        else if(vehiculo.veh_combustible === 'Híbrido') {
+            colorBadge = 'bg-success'
+        }
+        else if(vehiculo.veh_combustible === 'Eléctrico') {
+            colorBadge = 'bg-info'
+        }
+
         const li = document.createElement('li')
         li.className = 'list-group-item d-flex justify-content-between align-items-center'
         li.innerHTML = `
@@ -48,7 +64,7 @@ async function cargarDashboard() {
                 </div>
             </div>
 
-            <span class="badge bg-info">
+            <span class="badge ${colorBadge}">
                 ${vehiculo.veh_combustible}
             </span>
         

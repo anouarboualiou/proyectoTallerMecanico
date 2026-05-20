@@ -3,6 +3,8 @@ const app = document.getElementById("app")
 
 async function cargarVista(view) {
 
+    actualizarNavbar()
+
     try {
 
         const viewBase = view.split('/')[0]
@@ -20,6 +22,8 @@ async function cargarVista(view) {
 
             app.innerHTML = html
 
+            activarValidacionBootstrap()
+
             cargarEditarCliente(id)
 
             return
@@ -36,6 +40,8 @@ async function cargarVista(view) {
 
             app.innerHTML = html
 
+            activarValidacionBootstrap()
+
             cargarEditarVehiculo(id)
 
             return
@@ -49,6 +55,8 @@ async function cargarVista(view) {
             const html = await res.text()
 
             app.innerHTML = html
+
+            activarValidacionBootstrap()
 
             iniciarFormularioVehiculo()
 
@@ -89,6 +97,8 @@ async function cargarVista(view) {
 
             app.innerHTML = html
 
+            activarValidacionBootstrap()
+
             iniciarFormularioReparacion(vehiculoId)
 
             return
@@ -106,6 +116,8 @@ async function cargarVista(view) {
 
             app.innerHTML = html
 
+            activarValidacionBootstrap()
+
             iniciarFormularioLog(id)
 
             return
@@ -114,22 +126,22 @@ async function cargarVista(view) {
         //Vehiculo detalle
 
         if(
-    path.startsWith('/vehiculos/') && !path.startsWith('/vehiculos/editar/')) {
+        path.startsWith('/vehiculos/') && !path.startsWith('/vehiculos/editar/')) {
 
-        const id = path.split('/')[2]
+            const id = path.split('/')[2]
 
-        const res = await fetch(
-            '/views/vehiculoDetalle.html'
-        )
+            const res = await fetch(
+                '/views/vehiculoDetalle.html'
+            )
 
-        const html = await res.text()
+            const html = await res.text()
 
-        app.innerHTML = html
+            app.innerHTML = html
 
-        cargarDetalleVehiculo(id)
+            cargarDetalleVehiculo(id)
 
-        return
-    }
+            return
+        }
 
         const vistasValidas = [
 
@@ -169,6 +181,8 @@ async function cargarVista(view) {
         const html = await res.text()
 
         app.innerHTML = html
+
+        activarValidacionBootstrap()
 
         switch (viewBase) {
 
@@ -230,3 +244,24 @@ window.addEventListener('load', () => {
 
     cargarVista(view)
 })
+
+
+function actualizarNavbar() {
+
+    const path = window.location.pathname
+
+    // Quitar active de todos
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active')
+    })
+
+    // Activar el enlace correcto
+    document.querySelectorAll('.nav-link').forEach(link => {
+
+        const href = link.getAttribute('href')
+
+        if(path === href || path.startsWith(href + '/')) {
+            link.classList.add('active')
+        }
+    })
+}

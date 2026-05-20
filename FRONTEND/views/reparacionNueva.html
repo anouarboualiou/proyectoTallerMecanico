@@ -14,7 +14,7 @@
 
         <div class="card-body p-4">
 
-            <form id="formReparacion">
+            <form id="formReparacion" class="needs-validation" novalidate>
 
                 <div class="row g-3">
 
@@ -22,16 +22,16 @@
 
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="rep_tipo" class="form-label fw-semibold">
                             Tipo reparación
                         </label>
 
-                        <input
-                            type="text"
-                            id="rep_tipo"
-                            class="form-control"
-                            placeholder="Ej: Cambio embrague"
-                        >
+                        <input type="text" id="rep_tipo" class="form-control" placeholder="Ej: Cambio embrague" required
+                            minlength="3">
+
+                        <div class="invalid-feedback">
+                            Introduce un tipo de reparación válido
+                        </div>
 
                     </div>
 
@@ -39,33 +39,33 @@
 
                     <div class="col-md-3">
 
-                        <label class="form-label">
+                        <label for="rep_duracion" class="form-label fw-semibold">
                             Horas trabajo
                         </label>
 
-                        <input
-                            type="number"
-                            id="rep_duracion"
-                            class="form-control"
-                            min="1"
-                            placeholder="Ej: 3"
-                        >
+                        <input type="number" id="rep_duracion" class="form-control" min="1" placeholder="Ej: 3"
+                            required>
+
+                        <div class="invalid-feedback">
+                            Introduce las horas de trabajo
+                        </div>
 
                     </div>
 
+                    <!-- Precio hora -->
+
                     <div class="col-md-3">
 
-                        <label class="form-label">
+                        <label for="rep_precio_hora" class="form-label fw-semibold">
                             Precio hora
                         </label>
 
-                        <input
-                            type="number"
-                            id="rep_precio_hora"
-                            class="form-control"
-                            min="1"
-                            placeholder="Ej: 60"
-                        >
+                        <input type="number" id="rep_precio_hora" class="form-control" min="1" placeholder="Ej: 60"
+                            required>
+
+                        <div class="invalid-feedback">
+                            Introduce un precio por hora válido
+                        </div>
 
                     </div>
 
@@ -73,14 +73,15 @@
 
                     <div class="col-md-3">
 
-                        <label class="form-label">
+                        <label for="rep_garantia" class="form-label fw-semibold">
                             Garantía
                         </label>
 
-                        <select
-                            id="rep_garantia"
-                            class="form-select"
-                        >
+                        <select id="rep_garantia" class="form-select" required>
+
+                            <option value="">
+                                Seleccionar garantía
+                            </option>
 
                             <option value="6">
                                 6 meses
@@ -96,21 +97,25 @@
 
                         </select>
 
+                        <div class="invalid-feedback">
+                            Selecciona una garantía
+                        </div>
+
                     </div>
 
                     <!-- Fecha -->
 
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="rep_fecha" class="form-label fw-semibold">
                             Fecha
                         </label>
 
-                        <input
-                            type="date"
-                            id="rep_fecha"
-                            class="form-control"
-                        >
+                        <input type="date" id="rep_fecha" class="form-control" required>
+
+                        <div class="invalid-feedback">
+                            Selecciona una fecha válida
+                        </div>
 
                     </div>
 
@@ -133,14 +138,11 @@
 
                     <div class="col-md-6">
 
-                        <label class="form-label">
+                        <label for="piezaSelect" class="form-label fw-semibold">
                             Pieza
                         </label>
 
-                        <select
-                            id="piezaSelect"
-                            class="form-select"
-                        >
+                        <select id="piezaSelect" class="form-select">
 
                             <option value="">
                                 Seleccionar pieza
@@ -154,17 +156,11 @@
 
                     <div class="col-md-3">
 
-                        <label class="form-label">
+                        <label for="cantidadPieza" class="form-label fw-semibold">
                             Cantidad
                         </label>
 
-                        <input
-                            type="number"
-                            id="cantidadPieza"
-                            class="form-control"
-                            min="1"
-                            value="1"
-                        >
+                        <input type="number" id="cantidadPieza" class="form-control" min="1" value="1">
 
                     </div>
 
@@ -172,11 +168,7 @@
 
                     <div class="col-md-3">
 
-                        <button
-                            type="button"
-                            class="btn btn-outline-primary w-100"
-                            id="btnAgregarPieza"
-                        >
+                        <button type="button" class="btn btn-outline-primary w-100" id="btnAgregarPieza">
 
                             <i class="bi bi-plus-lg me-2"></i>
                             Añadir
@@ -193,7 +185,7 @@
 
                     <table class="table align-middle">
 
-                        <thead>
+                        <thead class="table-light">
 
                             <tr>
 
@@ -223,7 +215,7 @@
 
                     <div class="col-md-4">
 
-                        <div class="card bg-light border-0">
+                        <div class="card bg-light border-0 shadow-sm rounded-4">
 
                             <div class="card-body">
 
@@ -251,9 +243,11 @@
 
                                 <div class="d-flex justify-content-between">
 
-                                    <h5>Total</h5>
+                                    <h5 class="mb-0">
+                                        Total
+                                    </h5>
 
-                                    <h5 id="totalReparacion">
+                                    <h5 id="totalReparacion" class="mb-0 text-success">
                                         0€
                                     </h5>
 
@@ -271,19 +265,18 @@
 
                 <div class="mt-4 d-flex gap-2">
 
-                    <button class="btn btn-success">
+                    <button type="submit" class="btn btn-success px-4">
 
                         <i class="bi bi-tools me-2"></i>
                         Guardar reparación
 
                     </button>
 
-                    <button
-                        type="button"
-                        class="btn btn-outline-secondary"
-                        onclick="navegarHacia('vehiculos')"
-                    >
+                    <button type="button" class="btn btn-outline-secondary" onclick="navegarHacia('vehiculos')">
+
+                        <i class="bi bi-x-circle me-2"></i>
                         Cancelar
+
                     </button>
 
                 </div>
