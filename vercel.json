@@ -1,17 +1,27 @@
 {
   "version": 2,
-
   "builds": [
     {
       "src": "BACKEND/server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "FRONTEND/**",
+      "use": "@vercel/static"
     }
   ],
-
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "BACKEND/server.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/FRONTEND/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|ico|svg|json))",
+      "dest": "/FRONTEND/$1"
     },
     {
       "src": "/(.*)",
