@@ -46,8 +46,10 @@ app.get(/^(?!\/api).*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../FRONTEND/index.html'))
 })
 
-app.listen(PORT, () => {
-    console.log(`Servidor en puerto ${PORT}`)
-})
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Servidor en puerto ${PORT}`)
+    })
+}
 
 module.exports = app

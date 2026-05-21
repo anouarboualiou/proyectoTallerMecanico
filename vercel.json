@@ -16,12 +16,12 @@
       "dest": "BACKEND/server.js"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/FRONTEND/assets/$1"
+      "src": "/(.*\\.(js|css|png|jpg|ico|svg|woff2?))",
+      "dest": "/FRONTEND/$1"
     },
     {
-      "src": "/(.*\\.(js|css|png|jpg|ico|svg|json))",
-      "dest": "/FRONTEND/$1"
+      "src": "/views/(.*)",
+      "dest": "/FRONTEND/views/$1"
     },
     {
       "src": "/(.*)",
