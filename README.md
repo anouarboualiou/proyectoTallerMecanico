@@ -82,7 +82,9 @@ La aplicación permite:
 | PUT | /api/clientes/:id | Editar cliente |
 | DELETE | /api/clientes/:id | Eliminar cliente |
 
-## Aplicación desplegada
+## Aplicación desplegada en Vercel
+
+https://proyecto-taller-mecanico.vercel.app/
 
 
 ## Comentarios
