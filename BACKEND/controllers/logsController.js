@@ -92,8 +92,36 @@ async function updateLog(req, res) {
     }
 }
 
+async function deleteLog(req, res) {
+
+    const { id } = req.params
+
+    try {
+
+        const logEliminado = await Log.findByIdAndDelete(id)
+
+        if (!logEliminado) {
+            return res.status(404).json({
+                error: 'Log no encontrado'
+            })
+        }
+
+        res.json({
+            mensaje: 'Log eliminado correctamente'
+        })
+
+    } catch(error) {
+
+        res.status(500).json({
+            error: 'Error al eliminar log',
+            detalle: error.message
+        })
+    }
+}
+
 module.exports = {
     addLog,
     getLogs,
-    updateLog
+    updateLog,
+    deleteLog,
 }

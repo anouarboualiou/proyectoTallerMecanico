@@ -1,0 +1,119 @@
+[
+    {
+        "_id": {
+            "$oid": "6a0e1bc2aefd25d8169f3075"
+        },
+        "vehiculo_id": 2,
+        "descripcion": "Cambio de aceite en una semana",
+        "prioridad": "Media",
+        "estado": "Abierto",
+        "fecha": {
+            "$date": "2026-05-20T20:38:26.099Z"
+        },
+        "__v": 0
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b96"
+        },
+        "vehiculo_id": 4,
+        "descripcion": "Fallo intermitente en sistema ABS",
+        "prioridad": "Alta",
+        "estado": "Abierto",
+        "fecha": {
+            "$date": "2026-05-16T00:00:00.000Z"
+        },
+        "metadatos": {
+            "tecnico": "",
+            "observaciones": ""
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b94"
+        },
+        "vehiculo_id": 1,
+        "descripcion": "Cambio de aceite y filtro realizado correctamente",
+        "prioridad": "Baja",
+        "estado": "Cerrado",
+        "fecha": {
+            "$date": "2026-05-10T00:00:00.000Z"
+        },
+        "metadatos": {
+            "tecnico": "",
+            "observaciones": ""
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b98"
+        },
+        "vehiculo_id": 8,
+        "descripcion": "Pérdida de potencia detectada en turbo",
+        "prioridad": "Alta",
+        "estado": "En Proceso",
+        "fecha": {
+            "$date": "2026-05-20T00:00:00.000Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b97"
+        },
+        "vehiculo_id": 6,
+        "descripcion": "Actualización de software y revisión batería",
+        "prioridad": "Media",
+        "estado": "Cerrado",
+        "fecha": {
+            "$date": "2026-05-18T00:00:00.000Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b95"
+        },
+        "vehiculo_id": 2,
+        "descripcion": "Ruido extraño en suspensión delantera",
+        "prioridad": "Media",
+        "estado": "En Proceso",
+        "fecha": {
+            "$date": "2026-05-14T00:00:00.000Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b9a"
+        },
+        "vehiculo_id": 2,
+        "descripcion": "Ruido extraño en suspensión delantera",
+        "prioridad": "Media",
+        "estado": "En Proceso",
+        "fecha": {
+            "$date": "2026-05-14T00:00:00.000Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b9b"
+        },
+        "vehiculo_id": 4,
+        "descripcion": "Fallo intermitente en sistema ABS",
+        "prioridad": "Alta",
+        "estado": "Abierto",
+        "fecha": {
+            "$date": "2026-05-16T00:00:00.000Z"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6a0e1cc4dedfb321b9746b9c"
+        },
+        "vehiculo_id": 6,
+        "descripcion": "Actualización de software y revisión batería",
+        "prioridad": "Media",
+        "estado": "Cerrado",
+        "fecha": {
+            "$date": "2026-05-18T00:00:00.000Z"
+        }
+    }
+]

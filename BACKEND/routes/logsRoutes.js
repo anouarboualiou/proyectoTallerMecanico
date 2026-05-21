@@ -13,5 +13,9 @@ router.post('/', controller.addLog)
 
 router.put('/:id', controller.updateLog)
 
+//DELETE -> eliminar logs
+
+router.delete('/:id', controller.deleteLog)
+
 
 module.exports = router

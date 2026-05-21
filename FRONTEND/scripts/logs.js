@@ -184,6 +184,13 @@ async function cargarLogs() {
                                     <i class="bi bi-pencil"></i>
                                 </button>
 
+                                <button
+                                    class="btn btn-sm btn-outline-danger btnEliminar"
+                                    title="Eliminar incidencia"
+                                >
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
 
                             </div>
 
@@ -200,6 +207,14 @@ async function cargarLogs() {
             btnEditar.addEventListener('click', () => {
 
                 abrirModalEditar(log)
+            })
+
+            const btnEliminar =
+                col.querySelector('.btnEliminar')
+
+            btnEliminar.addEventListener('click', () => {
+
+                eliminarLog(log._id)
             })
 
             const btnVehiculoDetalle =
@@ -395,6 +410,43 @@ async function cerrarLog(id) {
         console.error(error)
 
         alert('Error al cerrar incidencia')
+    }
+}
+
+// =========================
+// ELIMINAR LOG
+// =========================
+
+async function eliminarLog(id) {
+
+    const confirmar = confirm(
+        '¿Eliminar incidencia?'
+    )
+
+    if (!confirmar) {
+        return
+    }
+
+    try {
+
+        const res = await fetch(
+            `/api/logs/${id}`,
+            {
+                method: 'DELETE'
+            }
+        )
+
+        if (!res.ok) {
+            throw new Error()
+        }
+
+        cargarLogs()
+
+    } catch (error) {
+
+        console.error(error)
+
+        alert('Error al eliminar incidencia')
     }
 }
 
