@@ -2,36 +2,35 @@ require('dotenv').config()
 
 const mysql = require('mysql2')
 
-const link = mysql.createConnection({
+let pool
 
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+if (!global.mysqlPool) {
 
-    dateStrings: true,
+    global.mysqlPool = mysql.createPool({
 
-    ssl: {
-        rejectUnauthorized: false
-    }
-})
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        port: process.env.DB_PORT,
 
-link.connect((error) => {
+        waitForConnections: true,
+        connectionLimit: 5,
+        queueLimit: 0,
 
-    if (error) {
+        connectTimeout: 10000,
 
-        console.error(
-            'Error de conexión MySql:',
-            error
-        )
-    }
-    else {
+        enableKeepAlive: true,
+        keepAliveInitialDelay: 0,
 
-        console.log(
-            'MySql conectado con éxito'
-        )
-    }
-})
+        dateStrings: true,
 
-module.exports = link
+        ssl: {
+            rejectUnauthorized: false
+        }
+    })
+}
+
+pool = global.mysqlPool
+
+module.exports = pool
